@@ -54,7 +54,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.38</version>
+            <version>8.0.18</version>
             <scope>runtime</scope>
         </dependency>
         <!--MyBatis 及 插件依赖-->
@@ -145,7 +145,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.35</version>
+                        <version>8.0.18</version>
                     </dependency>
                 </dependencies>
                 <configuration>

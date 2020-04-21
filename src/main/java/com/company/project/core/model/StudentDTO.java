@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class StudentDTO {
     String studentId;
-    String club;
+    Integer level;
     String major;
     String name;
 }

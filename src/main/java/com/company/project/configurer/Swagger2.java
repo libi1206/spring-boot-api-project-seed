@@ -34,7 +34,7 @@ public class Swagger2 {
         return new ApiInfoBuilder()
                 .title("项目接口调试")
                 .description("测试接口连通性")
-                .termsOfServiceUrl("http://cn.hyperchain.tracidence")
+                .termsOfServiceUrl("")
                 .version("1.0")
                 .build();
     }

@@ -15,7 +15,7 @@
 		</commentGenerator>
 
 		<!--jdbc的数据库连接 -->
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://101.37.33.46:3306/undercover" userId="root" password="Libi@1206">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/test" userId="root" password="Libi@1206">
 		</jdbcConnection>
 
 		<!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制-->
@@ -71,9 +71,7 @@
 		</javaClientGenerator>
 
 		<!--需要生成的表，根据项目情况自己填-->
-		<table tableName="record" domainObjectName="RecordBean" />
-		<table tableName="student" domainObjectName="StudentBean"/>
-		<table tableName="user" domainObjectName="UserBean"/>
+		<table tableName="student_example" domainObjectName="StudentExampleBean"/>
 
 	</context>
 </generatorConfiguration>

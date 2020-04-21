@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.company.project.core.dao.auto.StudentBeanMapper" >
-  <resultMap id="BaseResultMap" type="com.company.project.core.bean.auto.StudentBean" >
+<mapper namespace="com.company.project.core.dao.auto.StudentExampleBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.company.project.core.bean.auto.StudentExampleBean" >
     <constructor >
       <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String" />
-    </constructor>
-  </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.company.project.core.bean.auto.StudentBean" >
-    <constructor >
-      <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="name" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
-      <arg column="club" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
-      <arg column="major" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="major" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="level" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="delete" jdbcType="BIT" javaType="java.lang.Boolean" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -73,20 +69,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id
+    id, name, major, level, delete
   </sql>
-  <sql id="Blob_Column_List" >
-    name, club, major
-  </sql>
-  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.company.project.core.bean.auto.StudentBeanExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.company.project.core.bean.auto.StudentExampleBeanExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from student
+    from student_example
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -94,28 +85,14 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.company.project.core.bean.auto.StudentBeanExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from student
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <delete id="deleteByExample" parameterType="com.company.project.core.bean.auto.StudentBeanExample" >
-    delete from student
+  <delete id="deleteByExample" parameterType="com.company.project.core.bean.auto.StudentExampleBeanExample" >
+    delete from student_example
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insertSelective" parameterType="com.company.project.core.bean.auto.StudentBean" >
-    insert into student
+  <insert id="insertSelective" parameterType="com.company.project.core.bean.auto.StudentExampleBean" >
+    insert into student_example
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -123,11 +100,14 @@
       <if test="name != null" >
         name,
       </if>
-      <if test="club != null" >
-        club,
-      </if>
       <if test="major != null" >
         major,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="delete != null" >
+        delete,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -135,70 +115,73 @@
         #{id,jdbcType=VARCHAR},
       </if>
       <if test="name != null" >
-        #{name,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="club != null" >
-        #{club,jdbcType=LONGVARCHAR},
+        #{name,jdbcType=VARCHAR},
       </if>
       <if test="major != null" >
-        #{major,jdbcType=LONGVARCHAR},
+        #{major,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="delete != null" >
+        #{delete,jdbcType=BIT},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.company.project.core.bean.auto.StudentBeanExample" resultType="java.lang.Integer" >
-    select count(*) from student
+  <select id="countByExample" parameterType="com.company.project.core.bean.auto.StudentExampleBeanExample" resultType="java.lang.Integer" >
+    select count(*) from student_example
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update student
+    update student_example
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=VARCHAR},
       </if>
       <if test="record.name != null" >
-        name = #{record.name,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="record.club != null" >
-        club = #{record.club,jdbcType=LONGVARCHAR},
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.major != null" >
-        major = #{record.major,jdbcType=LONGVARCHAR},
+        major = #{record.major,jdbcType=VARCHAR},
+      </if>
+      <if test="record.level != null" >
+        level = #{record.level,jdbcType=INTEGER},
+      </if>
+      <if test="record.delete != null" >
+        delete = #{record.delete,jdbcType=BIT},
       </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByExampleWithBLOBs" parameterType="map" >
-    update student
-    set id = #{record.id,jdbcType=VARCHAR},
-      name = #{record.name,jdbcType=LONGVARCHAR},
-      club = #{record.club,jdbcType=LONGVARCHAR},
-      major = #{record.major,jdbcType=LONGVARCHAR}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
   <update id="updateByExample" parameterType="map" >
-    update student
-    set id = #{record.id,jdbcType=VARCHAR}
+    update student_example
+    set id = #{record.id,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      major = #{record.major,jdbcType=VARCHAR},
+      level = #{record.level,jdbcType=INTEGER},
+      delete = #{record.delete,jdbcType=BIT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.company.project.core.bean.auto.StudentBean" >
-    update student
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.project.core.bean.auto.StudentExampleBean" >
+    update student_example
     <set >
       <if test="name != null" >
-        name = #{name,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="club != null" >
-        club = #{club,jdbcType=LONGVARCHAR},
+        name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="major != null" >
-        major = #{major,jdbcType=LONGVARCHAR},
+        major = #{major,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="delete != null" >
+        delete = #{delete,jdbcType=BIT},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}

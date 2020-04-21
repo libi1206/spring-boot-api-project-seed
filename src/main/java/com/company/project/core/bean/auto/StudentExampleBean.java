@@ -1,22 +1,25 @@
 package com.company.project.core.bean.auto;
 
-public class StudentBean {
+public class StudentExampleBean {
     private String id;
 
     private String name;
 
-    private String club;
-
     private String major;
 
-    public StudentBean(String id, String name, String club, String major) {
+    private Integer level;
+
+    private Boolean delete;
+
+    public StudentExampleBean(String id, String name, String major, Integer level, Boolean delete) {
         this.id = id;
         this.name = name;
-        this.club = club;
         this.major = major;
+        this.level = level;
+        this.delete = delete;
     }
 
-    public StudentBean() {
+    public StudentExampleBean() {
         super();
     }
 
@@ -36,19 +39,27 @@ public class StudentBean {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getClub() {
-        return club;
-    }
-
-    public void setClub(String club) {
-        this.club = club == null ? null : club.trim();
-    }
-
     public String getMajor() {
         return major;
     }
 
     public void setMajor(String major) {
         this.major = major == null ? null : major.trim();
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    public Boolean getDelete() {
+        return delete;
+    }
+
+    public void setDelete(Boolean delete) {
+        this.delete = delete;
     }
 }

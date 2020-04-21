@@ -1,6 +1,5 @@
 package com.company.project.service;
 
-import com.company.project.core.bean.auto.StudentBean;
 import com.company.project.core.model.StudentDTO;
 import com.company.project.response.BaseResult;
 

@@ -1,14 +1,11 @@
 package com.conpany.project.dao;
 
-import com.company.project.Application;
-import com.company.project.core.bean.auto.StudentBean;
-import com.company.project.core.dao.auto.StudentBeanMapper;
+import com.company.project.core.bean.auto.StudentExampleBean;
+import com.company.project.core.dao.auto.StudentExampleBeanMapper;
 import com.conpany.project.Tester;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author :Libi
@@ -16,18 +13,21 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @date :2020-04-03 11:07
  */
 
+@Slf4j
 public class TestStudentDao extends Tester {
     @Autowired
-    StudentBeanMapper studentBeanMapper;
+    StudentExampleBeanMapper studentExampleBeanMapper;
 
     @Test
     public void testDao() {
-        StudentBean bean = new StudentBean();
-        bean.setId("11611111");
-        bean.setClub("123");
-        bean.setMajor("3321");
-        bean.setName("阿比");
-        studentBeanMapper.insert(bean);
+        StudentExampleBean student = new StudentExampleBean();
+        student.setId("1161020054");
+        student.setName("libi");
+        student.setLevel(4);
+        student.setMajor("计算机科学与技术");
+
+        studentExampleBeanMapper.insertSelective(student);
+        log.info("插入完成");
     }
 
 }
