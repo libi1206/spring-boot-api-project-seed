@@ -70,7 +70,7 @@
 			<property name="rootInterface" value=""/>
 		</javaClientGenerator>
 
-		<!--需要生成的表-->
+		<!--需要生成的表，根据项目情况自己填-->
 		<table tableName="record" domainObjectName="RecordBean" />
 		<table tableName="student" domainObjectName="StudentBean"/>
 		<table tableName="user" domainObjectName="UserBean"/>

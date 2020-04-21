@@ -4,7 +4,12 @@ public enum Code {
     //通用部分
     UNDEFINED(-1, "未定义"),
     SUCCESS(0, "成功"),
-    ERROR(1, "失败");
+    ERROR(1, "失败"),
+
+
+
+
+    UNKNOWN_ABNORMAL(9999,"未知异常");
 
 
     private int code;

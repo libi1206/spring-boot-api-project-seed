@@ -3,7 +3,7 @@ spring:
     active: dev
 # 所有环境通用的配置，放在这里
   resources:
-    add-mappings: false
+    add-mappings: true
 
 server:
   port: 9000
