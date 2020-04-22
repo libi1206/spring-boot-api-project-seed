@@ -9,14 +9,14 @@ public class StudentExampleBean {
 
     private Integer level;
 
-    private Boolean delete;
+    private Boolean deleteFlag;
 
-    public StudentExampleBean(String id, String name, String major, Integer level, Boolean delete) {
+    public StudentExampleBean(String id, String name, String major, Integer level, Boolean deleteFlag) {
         this.id = id;
         this.name = name;
         this.major = major;
         this.level = level;
-        this.delete = delete;
+        this.deleteFlag = deleteFlag;
     }
 
     public StudentExampleBean() {
@@ -55,11 +55,11 @@ public class StudentExampleBean {
         this.level = level;
     }
 
-    public Boolean getDelete() {
-        return delete;
+    public Boolean getDeleteFlag() {
+        return deleteFlag;
     }
 
-    public void setDelete(Boolean delete) {
-        this.delete = delete;
+    public void setDeleteFlag(Boolean deleteFlag) {
+        this.deleteFlag = deleteFlag;
     }
 }

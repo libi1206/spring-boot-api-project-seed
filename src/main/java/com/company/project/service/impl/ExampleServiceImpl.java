@@ -3,12 +3,14 @@ package com.company.project.service.impl;
 import com.company.project.core.bean.auto.StudentExampleBean;
 import com.company.project.core.constent.Code;
 import com.company.project.core.dao.auto.StudentExampleBeanMapper;
+import com.company.project.core.exception.BusinessException;
 import com.company.project.core.model.StudentDTO;
-import com.company.project.response.BaseResult;
-import com.company.project.response.BaseResultFactory;
+import com.company.project.core.response.BaseResult;
+import com.company.project.core.response.BaseResultFactory;
 import com.company.project.service.ExampleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 /**
  * @author :Libi
@@ -34,7 +36,11 @@ public class ExampleServiceImpl implements ExampleService {
 
     @Override
     public BaseResult selectStudent(String studentId) {
-        return null;
+        StudentExampleBean bean = studentExampleBeanMapper.selectByPrimaryKey(studentId);
+        if (ObjectUtils.isEmpty(bean)) {
+            throw new BusinessException(Code.ERROR);
+        }
+        return BaseResultFactory.produceResult(Code.SUCCESS, bean);
     }
 
 }

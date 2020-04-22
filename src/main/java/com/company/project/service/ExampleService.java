@@ -1,7 +1,7 @@
 package com.company.project.service;
 
 import com.company.project.core.model.StudentDTO;
-import com.company.project.response.BaseResult;
+import com.company.project.core.response.BaseResult;
 
 /**
  * @author :Libi

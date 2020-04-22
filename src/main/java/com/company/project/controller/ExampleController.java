@@ -1,14 +1,12 @@
 package com.company.project.controller;
 
 import com.company.project.core.model.StudentDTO;
-import com.company.project.response.BaseResult;
+import com.company.project.core.response.BaseResult;
 import com.company.project.service.ExampleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.concurrent.ExecutorService;
 
 /**
  * @author :Libi

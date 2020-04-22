@@ -31,6 +31,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     //使用阿里 FastJson 作为JSON MessageConverter
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        logger.info("当前的配置文件：{}",env);
         FastJsonHttpMessageConverter converter = new FastJsonHttpMessageConverter();
         FastJsonConfig config = new FastJsonConfig();
         //保留空的字段

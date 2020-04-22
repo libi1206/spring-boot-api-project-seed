@@ -374,63 +374,63 @@ public class StudentExampleBeanExample {
             return (Criteria) this;
         }
 
-        public Criteria andDeleteIsNull() {
-            addCriterion("delete is null");
+        public Criteria andDeleteFlagIsNull() {
+            addCriterion("delete_flag is null");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteIsNotNull() {
-            addCriterion("delete is not null");
+        public Criteria andDeleteFlagIsNotNull() {
+            addCriterion("delete_flag is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteEqualTo(Boolean value) {
-            addCriterion("delete =", value, "delete");
+        public Criteria andDeleteFlagEqualTo(Boolean value) {
+            addCriterion("delete_flag =", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteNotEqualTo(Boolean value) {
-            addCriterion("delete <>", value, "delete");
+        public Criteria andDeleteFlagNotEqualTo(Boolean value) {
+            addCriterion("delete_flag <>", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteGreaterThan(Boolean value) {
-            addCriterion("delete >", value, "delete");
+        public Criteria andDeleteFlagGreaterThan(Boolean value) {
+            addCriterion("delete_flag >", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("delete >=", value, "delete");
+        public Criteria andDeleteFlagGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("delete_flag >=", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteLessThan(Boolean value) {
-            addCriterion("delete <", value, "delete");
+        public Criteria andDeleteFlagLessThan(Boolean value) {
+            addCriterion("delete_flag <", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteLessThanOrEqualTo(Boolean value) {
-            addCriterion("delete <=", value, "delete");
+        public Criteria andDeleteFlagLessThanOrEqualTo(Boolean value) {
+            addCriterion("delete_flag <=", value, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteIn(List<Boolean> values) {
-            addCriterion("delete in", values, "delete");
+        public Criteria andDeleteFlagIn(List<Boolean> values) {
+            addCriterion("delete_flag in", values, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteNotIn(List<Boolean> values) {
-            addCriterion("delete not in", values, "delete");
+        public Criteria andDeleteFlagNotIn(List<Boolean> values) {
+            addCriterion("delete_flag not in", values, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteBetween(Boolean value1, Boolean value2) {
-            addCriterion("delete between", value1, value2, "delete");
+        public Criteria andDeleteFlagBetween(Boolean value1, Boolean value2) {
+            addCriterion("delete_flag between", value1, value2, "deleteFlag");
             return (Criteria) this;
         }
 
-        public Criteria andDeleteNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("delete not between", value1, value2, "delete");
+        public Criteria andDeleteFlagNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("delete_flag not between", value1, value2, "deleteFlag");
             return (Criteria) this;
         }
     }

@@ -23,9 +23,9 @@ public interface StudentExampleBeanMapper {
 
     @Insert({
         "insert into student_example (id, name, ",
-        "major, level, delete)",
+        "major, level, delete_flag)",
         "values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, ",
-        "#{major,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{delete,jdbcType=BIT})"
+        "#{major,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{deleteFlag,jdbcType=BIT})"
     })
     int insert(StudentExampleBean record);
 
@@ -35,7 +35,7 @@ public interface StudentExampleBeanMapper {
 
     @Select({
         "select",
-        "id, name, major, level, delete",
+        "id, name, major, level, delete_flag",
         "from student_example",
         "where id = #{id,jdbcType=VARCHAR}"
     })
@@ -53,7 +53,7 @@ public interface StudentExampleBeanMapper {
         "set name = #{name,jdbcType=VARCHAR},",
           "major = #{major,jdbcType=VARCHAR},",
           "level = #{level,jdbcType=INTEGER},",
-          "delete = #{delete,jdbcType=BIT}",
+          "delete_flag = #{deleteFlag,jdbcType=BIT}",
         "where id = #{id,jdbcType=VARCHAR}"
     })
     int updateByPrimaryKey(StudentExampleBean record);

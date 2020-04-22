@@ -1,4 +1,4 @@
-package com.company.project.response;
+package com.company.project.core.response;
 
 
 import com.company.project.core.constent.Code;

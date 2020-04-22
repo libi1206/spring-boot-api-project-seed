@@ -1,6 +1,6 @@
 package com.company.project.core.exception;
 
-import com.company.project.response.BaseResult;
+import com.company.project.core.response.BaseResult;
 
 /**
  * Created by superlee on 2017/11/6.

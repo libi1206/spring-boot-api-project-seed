@@ -2,7 +2,7 @@ package com.company.project.core.exception;
 
 
 import com.company.project.core.constent.Code;
-import com.company.project.response.BaseResult;
+import com.company.project.core.response.BaseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
